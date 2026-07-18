@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Kalkulator Fizik</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .card-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            width: 280px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kalkulator Pengukuran Fizik</h1>
+        <p class="subtitle">Sila pilih alat pengukuran di bawah untuk mula mengira:</p>
+
+        <div class="card-group">
+            <!-- Kad 1: Vernier Caliper -->
+            <a href="VernierCaliper-calculator.html" class="card">
+                <div class="card-icon">📏</div>
+                <h3>Vernier Caliper</h3>
+                <p>Kira bacaan angkup vernier dengan mudah termasuk ralat sifar.</p>
+            </a>
+
+            <!-- Kad 2: Micrometer Screw Gauge -->
+            <a href="MicrometerScrewGauge-calculator.html" class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>Micrometer Screw Gauge</h3>
+                <p>Kira bacaan tolok skru mikrometer secara tepat dan cepat.</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
