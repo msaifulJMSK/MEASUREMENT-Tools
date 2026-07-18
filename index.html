@@ -1,106 +1,172 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Kalkulator Fizik</title>
+    <title>Physics Measurement Tool Suite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background: #f4f7f6;
+            background-color: #f1f4f8; /* slightly cooler tone for the light grey */
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #333;
         }
 
         .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px;
             text-align: center;
-            max-width: 800px;
-            padding: 20px;
         }
 
-        h1 {
-            margin-bottom: 10px;
+        .header {
+            margin-bottom: 60px;
+        }
+
+        .main-title {
             color: #2c3e50;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: capitalize;
         }
 
-        .subtitle {
+        .main-subtitle {
             color: #7f8c8d;
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            font-size: 1.1rem;
         }
 
         .card-group {
             display: flex;
-            gap: 20px;
+            gap: 40px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .card {
+        .tool-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            padding: 30px;
-            width: 280px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            width: 400px;
+            height: 480px; /* fixed height for better alignment */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: #3498db;
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
+        .tool-card:hover::after {
+            opacity: 1;
+        }
+
+        /* The refined, photo-realistic 3D icon placement */
         .card-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* placeholders - actual image urls should go in specific rules below */
+            background-color: #eee;
+            border-radius: 50%;
+            position: relative;
         }
 
-        .card h3 {
+        /* Vernier Caliper Card Specific Styling */
+        .tool-card--vernier {
+            border-bottom: 4px solid #3498db;
+        }
+
+        .tool-card--vernier .card-icon {
+            /* Replace with actual image: background-image: url('images/vernier.png'); */
+            /* Add this comment to indicate a detailed 3D metallic caliper */
+            content: "";
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            /* Placeholder: a detailed 3D metallic caliper render will go here */
+        }
+
+        /* Micrometer Card Specific Styling */
+        .tool-card--micrometer {
+            border-bottom: 4px solid #9b59b6;
+        }
+
+        .tool-card--micrometer .card-icon {
+            /* Replace with actual image: background-image: url('images/micrometer.png'); */
+            /* Add this comment to indicate a high-res photorealistic micrometer */
+            content: "";
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            /* Placeholder: a photorealistic 3D micrometer render will go here */
+        }
+
+        .card-title {
             color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
-        .card p {
+        .card-text {
             color: #7f8c8d;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            text-align: center;
+            flex-grow: 1;
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Kalkulator Pengukuran Fizik</h1>
-        <p class="subtitle">Sila pilih alat pengukuran di bawah untuk mula mengira:</p>
+        <div class="header">
+            <h1 class="main-title">Physics Measurement Tool Suite</h1>
+            <p class="main-subtitle">Select a tool below to quickly and accurately determine dimensions.</p>
+        </div>
 
         <div class="card-group">
-            <!-- Kad 1: Vernier Caliper -->
-            <a href="VernierCaliper-calculator.html" class="card">
-                <div class="card-icon">📏</div>
-                <h3>Vernier Caliper</h3>
-                <p>Kira bacaan angkup vernier dengan mudah termasuk ralat sifar.</p>
+            <!-- Card 1: Vernier Caliper -->
+            <a href="vernier-calculator.html" class="tool-card tool-card--vernier">
+                <div class="card-icon">
+                    <!-- A detailed 3D metallic silver caliper render will be placed here -->
+                </div>
+                <h3 class="card-title">Vernier Caliper</h3>
+                <p class="card-text">Precision measurements with zero-error correction.</p>
             </a>
 
-            <!-- Kad 2: Micrometer Screw Gauge -->
-            <a href="MicrometerScrewGauge-calculator.html" class="card">
-                <div class="card-icon">⚙️</div>
-                <h3>Micrometer Screw Gauge</h3>
-                <p>Kira bacaan tolok skru mikrometer secara tepat dan cepat.</p>
+            <!-- Card 2: Micrometer Screw Gauge -->
+            <a href="micrometer-calculator.html" class="tool-card tool-card--micrometer">
+                <div class="card-icon">
+                    <!-- A high-res photorealistic micrometer render will be placed here -->
+                </div>
+                <h3 class="card-title">Micrometer Screw Gauge</h3>
+                <p class="card-text">Accurate, rapid screw-gauge diameter and width measurements.</p>
             </a>
         </div>
     </div>
