@@ -197,7 +197,7 @@
                 <span class="label-text">Reading : &nbsp;<strong>Circular scale</strong> (position in line)</span>
                 <span class="separator">=</span>
                 <input type="number" id="circularScale" class="input-field" value="2" step="1" oninput="calculate()">
-                <span class="unit">mm</span>
+                <span class="unit"></span>
             </div>
 
             <div class="row">
@@ -289,8 +289,8 @@
 
         // 6. Tukar Keputusan kepada cm (seperti dalam gambar rujukan)
         // Formula: mm / 10 = cm
-        const obtainedReadingCm = obtainedReadingMm / 10;
-        const trueReadingCm = trueReadingMm / 10;
+        const obtainedReadingCm = obtainedReadingMm;
+        const trueReadingCm = trueReadingMm;
 
         // 7. Paparkan keputusan, diformat kepada 2 tempat perpuluhan
         document.getElementById('obtainedReading').value = obtainedReadingCm.toFixed(2);
